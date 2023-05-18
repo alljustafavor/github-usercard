@@ -56,6 +56,53 @@ const followersArray = [];
       </div>
     </div>
 */
+const cards = document.querySelector(".cards")
+const makeCard = (gitObj) => {
+
+const card = document.createElement("div");
+const cardImg = document.createElement("img");
+const cardInfo = document.createElement("div");
+const cardName = document.createElement("h3");
+const cardUsername = document.createElement("p");
+const cardLocation = document.createElement("p");
+const cardProfile = document.createElement("p");
+const cardProfileURL = document.createElement("a");
+const cardFollowers = document.createElement("p");
+const cardFollowing = document.createElement("p");
+const cardBio = document.createElement("p");
+
+card.appendChild(cardImg);
+card.appendChild(cardInfo);
+cardInfo.appendChild(cardName);
+cardInfo.appendChild(cardUsername);
+cardInfo.appendChild(cardLocation);
+cardInfo.appendChild(cardProfile)
+cardProfile.appendChild(cardProfileURL);
+cardInfo.appendChild(cardFollowers);
+cardInfo.appendChild(cardFollowing);
+cardInfo.appendChild(cardBio);
+cards.appendChild(card);
+
+card.classList.add("card");
+cardInfo.classList.add("card-info");
+cardName.classList.add("name");
+cardUsername.classList.add("username");
+
+cardImg.src = avatar_url;
+cardName.textContent = name;
+cardUsername.textContent = login;
+cardLocation.textContent = location;
+cardProfile.textContent = "Profile:"
+cardProfileURL.href = url;
+cardProfile.textContent = url;
+cardFollowers.textContent = `Followers: ${followers}`;
+cardFollowing.textContent = `Following: ${following}`;
+cardBio.textContent = `Bio: ${bio}`
+
+return card
+}
+
+makeCard({name: "joe", username: "alljustafavor"})
 
 /*
   List of LS Instructors Github username's:
